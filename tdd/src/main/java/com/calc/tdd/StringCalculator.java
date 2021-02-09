@@ -11,19 +11,17 @@ public class StringCalculator {
 		if(numbers.isEmpty()) {
 			return 0;
 		}
-		String[] inputString  = numbers.split("\\,");
-		int[] input = new int[2];
+		String[] inputString;
+		if(!numbers.contains(",")) {
+			 return Integer.parseInt(numbers);
+		}
+		
+		inputString = numbers.split(",");
 		int sum = 0;
-		switch(inputString.length) {
-		case 1:
-			sum = Integer.parseInt(inputString[0]);
-			break;
-		case 2:
-			sum = Integer.parseInt(inputString[0]) + Integer.parseInt(inputString[1]);
-			break;
-		default :
-			System.out.println("Invalid input String");
-			return -1;
+		int len = inputString.length;
+		for(String str : inputString) {
+			int get = Integer.parseInt(str);
+			sum += get;
 		}
 		return sum;
 	}

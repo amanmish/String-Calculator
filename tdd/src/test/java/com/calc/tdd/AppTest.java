@@ -48,10 +48,10 @@ public class AppTest {
 	}
 	
 	@Test
-	public void invalidStringInputTest() {
-		String input = "1,2,3";
+	public void multipleStringInputTest() {
+		String input = "1,2,3,5,6";
 		int actual = stringCalculator.add(input);
-		int expected = -1;
+		int expected = 17;
 		assertEquals(expected, actual);
 	}
 }
