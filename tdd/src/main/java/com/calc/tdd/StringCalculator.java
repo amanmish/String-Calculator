@@ -10,11 +10,13 @@ public class StringCalculator {
 	 * @param numbers
 	 * @return sum result
 	 */
+	public static int count = 0;
 	public int add(String numbers) {
-		
+		GetCalledCount();
 		if(numbers.isEmpty()) {
 			return 0;
 		}
+		System.out.println(count);
 		String[] inputNumber;
 		inputNumber = inputNumber(numbers);
 		int sum = 0;
@@ -25,12 +27,25 @@ public class StringCalculator {
 			if(get < 0) {
 				negative.add(get);
 			}
+			if(get > 1000) {
+				continue;
+			}
 			sum += get;
 		}
+		checkNegative(negative);
+		return sum;
+	}
+	
+	private void checkNegative(ArrayList<Integer> negative) {
+		// TODO Auto-generated method stub
 		if(negative.size() > 0) {
 			throw new RuntimeException("Negatives not allowed- "+join(negative));
 		}
-		return sum;
+	}
+
+	public int GetCalledCount() {
+		count++;
+		return count;
 	}
 	private String join(ArrayList<Integer> negative) {
 		// TODO Auto-generated method stub

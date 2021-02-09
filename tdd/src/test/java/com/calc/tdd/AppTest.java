@@ -82,5 +82,21 @@ public class AppTest {
 			assertEquals("Negatives not allowed- -1",e.getMessage());
 		}
 	}
+	
+	/*@Test
+	public void countAddMethodTest() {
+		int actual = stringCalculator.GetCalledCount();
+		int expected = 6;
+		assertEquals(expected, actual);
+	}*/
+	
+	@Test
+	public void greaterThenThousandTest() {
+		String input = "1,1001,3";
+		int actual = stringCalculator.add(input);
+		int expected = 4;
+		assertEquals(expected, actual);
+	}
+	
 }
 
