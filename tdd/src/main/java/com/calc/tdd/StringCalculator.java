@@ -11,18 +11,25 @@ public class StringCalculator {
 		if(numbers.isEmpty()) {
 			return 0;
 		}
-		String[] inputString;
+		String[] inputNumber;
 		if(!numbers.contains(",")) {
 			 return Integer.parseInt(numbers);
 		}
 		
-		inputString = numbers.split(",");
+		inputNumber = inputNumber(numbers);
 		int sum = 0;
-		int len = inputString.length;
-		for(String str : inputString) {
+		int len = inputNumber.length;
+		for(String str : inputNumber) {
 			int get = Integer.parseInt(str);
 			sum += get;
 		}
 		return sum;
+	}
+	/*
+	 * To convert the String to tokens based on regex
+	 */
+	public String[] inputNumber(String input) {
+		String[] tokens = input.split(",|\n");
+		return tokens;
 	}
 }

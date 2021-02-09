@@ -54,5 +54,13 @@ public class AppTest {
 		int expected = 17;
 		assertEquals(expected, actual);
 	}
+	
+	@Test
+	public void newLineStringInputTest() {
+		String input = "1,2,3,5\n6";
+		int actual = stringCalculator.add(input);
+		int expected = 17;
+		assertEquals(expected, actual);
+	}
 }
 
