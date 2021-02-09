@@ -70,5 +70,17 @@ public class AppTest {
 		int expected = 6;
 		assertEquals(expected, actual);
 	}
+	
+	@Test
+	public void negativeStringInputExceptionTest() {
+		try {
+			
+			String input = "-1,2,3";
+			stringCalculator.add(input);
+			
+		} catch(RuntimeException e) { 
+			assertEquals("Negatives not allowed- -1",e.getMessage());
+		}
+	}
 }
 
